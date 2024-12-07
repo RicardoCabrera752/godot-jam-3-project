@@ -1,0 +1,55 @@
+[gd_scene load_steps=10 format=3 uid="uid://b46oc7e7uxivt"]
+
+[ext_resource type="Script" path="res://scripts/MainMenuWorld.cs" id="1_wnxbn"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_8ibte"]
+
+[sub_resource type="Sky" id="Sky_48ske"]
+sky_material = SubResource("PhysicalSkyMaterial_8ibte")
+
+[sub_resource type="Environment" id="Environment_chsru"]
+background_mode = 2
+sky = SubResource("Sky_48ske")
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_as47e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_caf6f"]
+albedo_color = Color(0.312775, 0.194952, 0.122869, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_riw2h"]
+size = Vector3(20, 0.1, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3bnn5"]
+albedo_color = Color(0.446777, 0.446777, 0.446777, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_flet5"]
+material = SubResource("StandardMaterial3D_3bnn5")
+
+[node name="MainMenuWorld" type="Node3D"]
+script = ExtResource("1_wnxbn")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_chsru")
+camera_attributes = SubResource("CameraAttributesPractical_as47e")
+
+[node name="Sunlight" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.850939, -0.417434, 0.31883, -0.495395, -0.436023, 0.751311, -0.174606, -0.797266, -0.577823, 12.8368, 39.0844, -22.3571)
+light_color = Color(0.830335, 0.830335, 0.830335, 1)
+shadow_enabled = true
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+material_override = SubResource("StandardMaterial3D_caf6f")
+mesh = SubResource("BoxMesh_riw2h")
+
+[node name="Tower" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53987, 0, -1.78716)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Tower"]
+mesh = SubResource("CylinderMesh_flet5")
+
+[node name="PlayerCamera" type="Camera3D" parent="."]
+transform = Transform3D(0.614271, -0.123442, 0.77938, -9.98189e-10, 0.987688, 0.156434, -0.789095, -0.0960932, 0.606709, 3.0418, 0.475101, 2.40856)
+current = true

@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmxd5xcj7lwfx"]
+
+[ext_resource type="Script" path="res://scripts/Main.cs" id="1_u30ci"]
+[ext_resource type="PackedScene" uid="uid://bylf018rpxja0" path="res://audio_manager.tscn" id="2_ofhx1"]
+[ext_resource type="PackedScene" uid="uid://bk1p13ysqkc8t" path="res://ui_manager.tscn" id="2_qyjkm"]
+[ext_resource type="PackedScene" uid="uid://d4c121o1tlkm8" path="res://world_manager.tscn" id="4_wq0db"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_u30ci")
+
+[node name="UIManager" parent="." instance=ExtResource("2_qyjkm")]
+
+[node name="AudioManager" parent="." instance=ExtResource("2_ofhx1")]
+
+[node name="WorldManager" parent="." instance=ExtResource("4_wq0db")]
+
+[node name="KillMenu" type="Button" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -723.0
+offset_top = -24.0
+offset_right = -690.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Kill"
+
+[node name="LoadMenu" type="Button" parent="."]
+visible = false
+offset_left = 77.0
+offset_top = 480.0
+offset_right = 125.0
+offset_bottom = 511.0
+text = "Load"
+
+[connection signal="AbandonGame" from="UIManager" to="." method="OnAbandonGame"]
+[connection signal="ChangeMasterVolume" from="UIManager" to="." method="OnChangeMasterVolume"]
+[connection signal="ChangeMusicVolume" from="UIManager" to="." method="OnChangeMusicVolume"]
+[connection signal="ChangeSoundEffectsVolume" from="UIManager" to="." method="OnChangeSoundEffectsVolume"]
+[connection signal="ExitGame" from="UIManager" to="." method="OnExitGame"]
+[connection signal="StartGame" from="UIManager" to="." method="OnStartGame"]
+[connection signal="pressed" from="KillMenu" to="." method="KillMenu"]
+[connection signal="pressed" from="LoadMenu" to="." method="LoadMenu"]

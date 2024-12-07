@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bylf018rpxja0"]
+
+[ext_resource type="AudioStream" uid="uid://dbrjr6j3qdh23" path="res://sounds/igor-video-game-soundtrack-organ-gothic-141567.mp3" id="1_iit3x"]
+[ext_resource type="AudioStream" uid="uid://d3tb3r3kfvaey" path="res://sounds/90s-game-ui-5-185098.mp3" id="2_spuk8"]
+
+[node name="AudioManager" type="Node"]
+
+[node name="MainMenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_iit3x")
+bus = &"Music"
+parameters/looping = true
+
+[node name="ButtonSoundEffect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_spuk8")
+bus = &"SFX"

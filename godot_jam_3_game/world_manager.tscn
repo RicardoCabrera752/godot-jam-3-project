@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4c121o1tlkm8"]
+
+[ext_resource type="Script" path="res://scripts/WorldManager.cs" id="1_r4em0"]
+[ext_resource type="PackedScene" uid="uid://b46oc7e7uxivt" path="res://main_menu_world.tscn" id="2_ed3l6"]
+[ext_resource type="PackedScene" uid="uid://b4qkw4di7y6tm" path="res://game_map_world.tscn" id="3_xqgaq"]
+
+[node name="WorldManager" type="Node3D"]
+script = ExtResource("1_r4em0")
+MainMenuWorldScene = ExtResource("2_ed3l6")
+GameMapWorldScene = ExtResource("3_xqgaq")

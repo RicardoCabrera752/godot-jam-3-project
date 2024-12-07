@@ -1,0 +1,2631 @@
+[gd_scene load_steps=28 format=3 uid="uid://bk1p13ysqkc8t"]
+
+[ext_resource type="Script" path="res://scripts/UIManager.cs" id="1_kaxon"]
+[ext_resource type="FontFile" uid="uid://cxw0jibq5wigu" path="res://fonts/Montserrat-Medium.ttf" id="1_reiq3"]
+[ext_resource type="Texture2D" uid="uid://cwymwbuyafgek" path="res://images/ui/monkaH.png" id="3_ijiku"]
+[ext_resource type="Texture2D" uid="uid://baxakff7ewiml" path="res://images/ui/leftMouseButton.png" id="4_3rfu7"]
+[ext_resource type="Texture2D" uid="uid://d0ft52rxdqxiv" path="res://images/ui/rightMouseButton.png" id="5_aj3t0"]
+[ext_resource type="Texture2D" uid="uid://cmsbf854ef0j0" path="res://images/ui/WASDButtons.png" id="6_0o8pg"]
+[ext_resource type="Texture2D" uid="uid://b75mi6v2onjwm" path="res://images/ui/EscButton.png" id="7_o7o4x"]
+[ext_resource type="Texture2D" uid="uid://dv3n18dwd4tf8" path="res://images/ui/TabButton.png" id="8_5rlpp"]
+[ext_resource type="Texture2D" uid="uid://cbdglqk6iuiq2" path="res://images/ui/EButton.png" id="9_vwfw4"]
+[ext_resource type="Texture2D" uid="uid://qlxo2g8mqet1" path="res://images/ui/FighterClass.png" id="10_72gil"]
+[ext_resource type="Texture2D" uid="uid://2u71tuq7a0cr" path="res://images/ui/RogueClass.png" id="11_wqb2q"]
+[ext_resource type="Texture2D" uid="uid://dtxuivhy7uiep" path="res://images/ui/CasterClass.png" id="12_c7qne"]
+[ext_resource type="Texture2D" uid="uid://r8spohkfvkfk" path="res://images/ui/FusionClass.png" id="13_tu0hg"]
+[ext_resource type="Texture2D" uid="uid://cu780yxb7nxfp" path="res://images/ui/ClassCounterChart.png" id="14_52duk"]
+[ext_resource type="Texture2D" uid="uid://c1n7jml6txy6j" path="res://images/ui/FusionCounter.png" id="15_2vtdq"]
+[ext_resource type="Texture2D" uid="uid://dvr4wod5eyno2" path="res://images/ui/GreenSoul.png" id="16_upw8b"]
+[ext_resource type="Texture2D" uid="uid://dlj6n74sd6jj1" path="res://images/ui/YellowSoul.png" id="17_mr7kc"]
+[ext_resource type="Texture2D" uid="uid://chd543h3kbiss" path="res://images/ui/PurpleSoul.png" id="18_2eheb"]
+[ext_resource type="Texture2D" uid="uid://c475gmjbbmaev" path="res://images/ui/RedSoul.png" id="19_ikul8"]
+[ext_resource type="Texture2D" uid="uid://sa3xjp38ixk3" path="res://images/ui/BlueSoul.png" id="20_xwwp4"]
+[ext_resource type="Texture2D" uid="uid://d141m5u1sljr8" path="res://images/ui/OmniSoul.png" id="21_l3syb"]
+[ext_resource type="Texture2D" uid="uid://cihfqf61xey06" path="res://images/ui/SoulCounterChart.png" id="22_7dt3d"]
+
+[sub_resource type="Theme" id="Theme_b4avw"]
+default_font = ExtResource("1_reiq3")
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_f1of0"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_vmf8l"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_fp1lx"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xkpxo"]
+
+[node name="UIManager" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_b4avw")
+script = ExtResource("1_kaxon")
+
+[node name="MainMenuUI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="GameTitle" type="Label" parent="MainMenuUI"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -83.0
+offset_right = 83.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Mighty Miniatures"
+horizontal_alignment = 1
+
+[node name="TitleImage" type="TextureRect" parent="MainMenuUI"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.0
+offset_top = 40.0
+offset_right = 52.0
+offset_bottom = 140.0
+grow_horizontal = 2
+mouse_filter = 2
+texture = ExtResource("3_ijiku")
+expand_mode = 1
+
+[node name="StartButton" type="Button" parent="MainMenuUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.0
+offset_top = -15.0
+offset_right = 58.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start"
+
+[node name="ControlsButton" type="Button" parent="MainMenuUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.0
+offset_top = 16.0
+offset_right = 58.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Controls/Help
+"
+
+[node name="OptionsButton" type="Button" parent="MainMenuUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.0
+offset_top = 47.0
+offset_right = 58.0
+offset_bottom = 78.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Options"
+
+[node name="CreditsButton" type="Button" parent="MainMenuUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.0
+offset_top = 78.0
+offset_right = 58.0
+offset_bottom = 109.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Credits"
+
+[node name="ExitButton" type="Button" parent="MainMenuUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.0
+offset_top = 109.0
+offset_right = 58.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit"
+
+[node name="StartUI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Title" type="Label" parent="StartUI"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_right = 100.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 36
+text = "Select Clan!"
+horizontal_alignment = 1
+
+[node name="RedClanContainer" type="Control" parent="StartUI"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ClanBackground" type="TextureRect" parent="StartUI/RedClanContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -140.0
+offset_right = 100.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("PlaceholderTexture2D_f1of0")
+
+[node name="ClanName" type="Label" parent="StartUI/RedClanContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -138.0
+offset_right = 32.0
+offset_bottom = -115.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Red Clan"
+horizontal_alignment = 1
+
+[node name="ClanStartingUnits" type="Label" parent="StartUI/RedClanContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.5
+offset_top = -24.5
+offset_right = 87.5
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Starting Units:
+3 Red Souls, 2 Random"
+horizontal_alignment = 1
+
+[node name="SelectClanButton" type="Button" parent="StartUI/RedClanContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = 109.0
+offset_right = 32.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Select"
+
+[node name="BlueClanContainer" type="Control" parent="StartUI"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 280.0
+offset_top = -20.0
+offset_right = 320.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ClanBackground" type="TextureRect" parent="StartUI/BlueClanContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -140.0
+offset_right = 100.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("PlaceholderTexture2D_f1of0")
+
+[node name="ClanName" type="Label" parent="StartUI/BlueClanContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -138.0
+offset_right = 37.0
+offset_bottom = -115.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Blue Clan"
+horizontal_alignment = 1
+
+[node name="ClanStartingUnits" type="Label" parent="StartUI/BlueClanContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.5
+offset_top = -24.5
+offset_right = 87.5
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Starting Units:
+3 Blue Souls, 2 Random"
+horizontal_alignment = 1
+
+[node name="SelectClanButton" type="Button" parent="StartUI/BlueClanContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = 109.0
+offset_right = 32.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Select"
+
+[node name="PurpleClanContainer" type="Control" parent="StartUI"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -20.0
+offset_right = -280.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ClanBackground" type="TextureRect" parent="StartUI/PurpleClanContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -140.0
+offset_right = 100.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("PlaceholderTexture2D_f1of0")
+
+[node name="ClanName" type="Label" parent="StartUI/PurpleClanContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -138.0
+offset_right = 45.0
+offset_bottom = -115.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Purple Clan"
+horizontal_alignment = 1
+
+[node name="ClanStartingUnits" type="Label" parent="StartUI/PurpleClanContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.5
+offset_top = -24.5
+offset_right = 87.5
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Starting Units:
+3 Purple Souls, 2 Random"
+horizontal_alignment = 1
+
+[node name="SelectClanButton" type="Button" parent="StartUI/PurpleClanContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = 109.0
+offset_right = 32.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Select"
+
+[node name="YellowClanContainer" type="Control" parent="StartUI"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -620.0
+offset_top = -20.0
+offset_right = -580.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ClanBackground" type="TextureRect" parent="StartUI/YellowClanContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -140.0
+offset_right = 100.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("PlaceholderTexture2D_f1of0")
+
+[node name="ClanName" type="Label" parent="StartUI/YellowClanContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -138.0
+offset_right = 41.0
+offset_bottom = -115.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Yellow Clan"
+horizontal_alignment = 1
+
+[node name="ClanStartingUnits" type="Label" parent="StartUI/YellowClanContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.5
+offset_top = -24.5
+offset_right = 87.5
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Starting Units:
+3 Yellow Souls, 2 Random"
+horizontal_alignment = 1
+
+[node name="SelectClanButton" type="Button" parent="StartUI/YellowClanContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = 109.0
+offset_right = 32.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Select"
+
+[node name="GreenClanContainer" type="Control" parent="StartUI"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 580.0
+offset_top = -20.0
+offset_right = 620.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ClanBackground" type="TextureRect" parent="StartUI/GreenClanContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -140.0
+offset_right = 100.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("PlaceholderTexture2D_f1of0")
+
+[node name="ClanName" type="Label" parent="StartUI/GreenClanContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -138.0
+offset_right = 42.0
+offset_bottom = -115.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Green Clan"
+horizontal_alignment = 1
+
+[node name="ClanStartingUnits" type="Label" parent="StartUI/GreenClanContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.5
+offset_top = -24.5
+offset_right = 87.5
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Starting Units:
+3 Green Souls, 2 Random"
+horizontal_alignment = 1
+
+[node name="SelectClanButton" type="Button" parent="StartUI/GreenClanContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = 109.0
+offset_right = 32.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Select"
+
+[node name="ControlsUI" type="CanvasLayer" parent="."]
+layer = 2
+visible = false
+
+[node name="GameControlsLabel" type="Label" parent="ControlsUI"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -57.5
+offset_right = 57.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Controls/Help"
+horizontal_alignment = 1
+
+[node name="GameControls" type="Control" parent="ControlsUI"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -520.0
+offset_top = -20.0
+offset_right = -480.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="ControlsUI/GameControls"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -220.0
+offset_right = 180.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.431373)
+
+[node name="LeftMouseButtonLabel" type="Label" parent="ControlsUI/GameControls"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = -187.0
+offset_right = 39.0
+offset_bottom = -138.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Interact/Select Unit
+/Confirm Action/Place Unit:"
+
+[node name="RightMouseButtonLabel" type="Label" parent="ControlsUI/GameControls"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = -101.0
+offset_right = 41.0
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Deselect Unit/Remove Unit:"
+
+[node name="CameraMovementLabel" type="Label" parent="ControlsUI/GameControls"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = -15.0
+offset_right = 31.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Battle Camera Movement:"
+
+[node name="EscapeButtonLabel" type="Label" parent="ControlsUI/GameControls"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = 55.0
+offset_right = 21.0
+offset_bottom = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Open/Close Pause Menu:"
+
+[node name="TabButtonLabel" type="Label" parent="ControlsUI/GameControls"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = 109.0
+offset_right = 1.0
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Open/Close Inventory:"
+
+[node name="EButtonLabel" type="Label" parent="ControlsUI/GameControls"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = 169.0
+offset_right = -35.0
+offset_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Open/Close Shop:"
+horizontal_alignment = 1
+
+[node name="LMBImage" type="TextureRect" parent="ControlsUI/GameControls"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 80.0
+offset_top = -202.0
+offset_right = 165.0
+offset_bottom = -117.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_3rfu7")
+expand_mode = 1
+
+[node name="RMBImage" type="TextureRect" parent="ControlsUI/GameControls"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = -95.0
+offset_right = 185.0
+offset_bottom = -10.0
+texture = ExtResource("5_aj3t0")
+expand_mode = 1
+
+[node name="WASDImage" type="TextureRect" parent="ControlsUI/GameControls"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = -10.0
+offset_right = 185.0
+offset_bottom = 75.0
+texture = ExtResource("6_0o8pg")
+expand_mode = 1
+
+[node name="EscImage" type="TextureRect" parent="ControlsUI/GameControls"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 67.0
+offset_right = 162.0
+offset_bottom = 109.0
+texture = ExtResource("7_o7o4x")
+expand_mode = 1
+
+[node name="TabImage" type="TextureRect" parent="ControlsUI/GameControls"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 124.0
+offset_right = 162.0
+offset_bottom = 166.0
+texture = ExtResource("8_5rlpp")
+expand_mode = 1
+
+[node name="EImage" type="TextureRect" parent="ControlsUI/GameControls"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 100.0
+offset_top = 161.0
+offset_right = 142.0
+offset_bottom = 203.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_vwfw4")
+expand_mode = 1
+
+[node name="GameControlsLabel" type="Label" parent="ControlsUI/GameControls"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.0
+offset_top = -220.0
+offset_right = 61.0
+offset_bottom = -197.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game Controls:"
+horizontal_alignment = 1
+
+[node name="UnitClassTypes" type="Control" parent="ControlsUI"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="ControlsUI/UnitClassTypes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -220.0
+offset_right = 180.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.431373)
+
+[node name="FighterClassLabel" type="Label" parent="ControlsUI/UnitClassTypes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = -192.0
+offset_right = 39.0
+offset_bottom = -143.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Fighter:"
+
+[node name="RogueClass Label" type="Label" parent="ControlsUI/UnitClassTypes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = -117.0
+offset_right = 41.0
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Rogue:"
+
+[node name="CasterClassLabel" type="Label" parent="ControlsUI/UnitClassTypes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1.0
+offset_top = -192.0
+offset_right = 204.0
+offset_bottom = -143.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Caster:"
+
+[node name="FusionClassLabel" type="Label" parent="ControlsUI/UnitClassTypes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1.0
+offset_top = -117.0
+offset_right = 194.0
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Fusion:"
+
+[node name="FighterClassImage" type="TextureRect" parent="ControlsUI/UnitClassTypes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.0
+offset_top = -197.0
+offset_right = -42.0
+offset_bottom = -133.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_72gil")
+expand_mode = 1
+
+[node name="RogueClassImage" type="TextureRect" parent="ControlsUI/UnitClassTypes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.0
+offset_top = -117.0
+offset_right = -42.0
+offset_bottom = -53.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_wqb2q")
+expand_mode = 1
+
+[node name="CasterClassImage" type="TextureRect" parent="ControlsUI/UnitClassTypes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 67.0
+offset_top = -197.0
+offset_right = 131.0
+offset_bottom = -133.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_c7qne")
+expand_mode = 1
+
+[node name="FusionClassImage" type="TextureRect" parent="ControlsUI/UnitClassTypes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 67.0
+offset_top = -115.0
+offset_right = 131.0
+offset_bottom = -51.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_tu0hg")
+expand_mode = 1
+
+[node name="UnitClassTypesLabel" type="Label" parent="ControlsUI/UnitClassTypes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -220.0
+offset_right = 64.0
+offset_bottom = -197.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Unit Class Types:"
+
+[node name="ClassCountersLabel" type="Label" parent="ControlsUI/UnitClassTypes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.0
+offset_top = -30.0
+offset_right = 77.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Class Type Counters:"
+horizontal_alignment = 1
+
+[node name="ClassCounterChart" type="TextureRect" parent="ControlsUI/UnitClassTypes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = -7.0
+offset_right = -12.0
+offset_bottom = 153.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_52duk")
+expand_mode = 1
+
+[node name="FusionCounterChart" type="TextureRect" parent="ControlsUI/UnitClassTypes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1.0
+offset_top = -7.0
+offset_right = 161.0
+offset_bottom = 153.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_2vtdq")
+expand_mode = 1
+
+[node name="FusionClassNote" type="Label" parent="ControlsUI/UnitClassTypes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 152.0
+offset_right = 104.0
+offset_bottom = 201.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Note: Fusion Class Units 
+counter Fusion Class Units"
+horizontal_alignment = 1
+
+[node name="UnitSoulTypes" type="Control" parent="ControlsUI"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 480.0
+offset_top = -20.0
+offset_right = 520.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="ControlsUI/UnitSoulTypes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -220.0
+offset_right = 180.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.431373)
+
+[node name="GreenSoulLabel" type="Label" parent="ControlsUI/UnitSoulTypes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = -192.0
+offset_right = 39.0
+offset_bottom = -143.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Green:"
+
+[node name="YellowSoulLabel" type="Label" parent="ControlsUI/UnitSoulTypes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = -148.0
+offset_right = 41.0
+offset_bottom = -99.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Yellow:"
+
+[node name="PurpleSoulLabel" type="Label" parent="ControlsUI/UnitSoulTypes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = -99.0
+offset_right = 31.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Purple:"
+
+[node name="RedSoulLabel" type="Label" parent="ControlsUI/UnitSoulTypes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -192.0
+offset_right = 213.0
+offset_bottom = -143.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Red:"
+
+[node name="BlueSoulLabel" type="Label" parent="ControlsUI/UnitSoulTypes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -148.0
+offset_right = 193.0
+offset_bottom = -125.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Blue:"
+
+[node name="OmniSoulLabel" type="Label" parent="ControlsUI/UnitSoulTypes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -99.0
+offset_right = 67.0
+offset_bottom = -76.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Omni:"
+horizontal_alignment = 1
+
+[node name="GreenSoulImage" type="TextureRect" parent="ControlsUI/UnitSoulTypes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.0
+offset_top = -187.0
+offset_right = -89.0
+offset_bottom = -171.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_upw8b")
+expand_mode = 1
+
+[node name="YellowSoulImage" type="TextureRect" parent="ControlsUI/UnitSoulTypes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.0
+offset_top = -140.0
+offset_right = -89.0
+offset_bottom = -124.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_mr7kc")
+expand_mode = 1
+
+[node name="PurpleSoulImage" type="TextureRect" parent="ControlsUI/UnitSoulTypes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.0
+offset_top = -94.0
+offset_right = -89.0
+offset_bottom = -78.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("18_2eheb")
+expand_mode = 1
+
+[node name="RedSoulImage" type="TextureRect" parent="ControlsUI/UnitSoulTypes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 68.0
+offset_top = -187.0
+offset_right = 84.0
+offset_bottom = -171.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_ikul8")
+expand_mode = 1
+
+[node name="BlueSoulImage" type="TextureRect" parent="ControlsUI/UnitSoulTypes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 68.0
+offset_top = -143.0
+offset_right = 84.0
+offset_bottom = -127.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("20_xwwp4")
+expand_mode = 1
+
+[node name="OmniSoulImage" type="TextureRect" parent="ControlsUI/UnitSoulTypes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 77.0
+offset_top = -94.0
+offset_right = 93.0
+offset_bottom = -78.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21_l3syb")
+expand_mode = 1
+
+[node name="UnitSoulTypesLabel" type="Label" parent="ControlsUI/UnitSoulTypes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.0
+offset_top = -220.0
+offset_right = 62.0
+offset_bottom = -197.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Unit Soul Types:"
+horizontal_alignment = 1
+
+[node name="SoulCountersLabel" type="Label" parent="ControlsUI/UnitSoulTypes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.0
+offset_top = -43.0
+offset_right = 77.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Soul Type Counters:"
+horizontal_alignment = 1
+
+[node name="SoulCountersChart" type="TextureRect" parent="ControlsUI/UnitSoulTypes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = -20.0
+offset_right = 71.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("22_7dt3d")
+expand_mode = 1
+
+[node name="OmniSoulNote" type="Label" parent="ControlsUI/UnitSoulTypes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = 152.0
+offset_right = 103.0
+offset_bottom = 201.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Note: Omni Soul Units do not
+take bonus damage"
+horizontal_alignment = 1
+
+[node name="ControlsBackground" type="ColorRect" parent="ControlsUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = 238.0
+offset_right = 180.0
+offset_bottom = 278.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.431373)
+
+[node name="CloseControls" type="Button" parent="ControlsUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = 242.0
+offset_right = 90.0
+offset_bottom = 274.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Close"
+
+[node name="OptionsUI" type="CanvasLayer" parent="."]
+layer = 2
+visible = false
+
+[node name="Background" type="ColorRect" parent="OptionsUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -80.0
+offset_right = 240.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.431373)
+
+[node name="Title" type="Label" parent="OptionsUI"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.5
+offset_right = 55.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Game Options"
+horizontal_alignment = 1
+
+[node name="MasterVolumeSlider" type="HSlider" parent="OptionsUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -59.0
+offset_right = 100.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="MasterVolumeLabel" type="Label" parent="OptionsUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.0
+offset_top = -67.0
+offset_right = -110.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Master Volume:"
+horizontal_alignment = 1
+
+[node name="MusicVolumeSlider" type="HSlider" parent="OptionsUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -20.0
+offset_right = 100.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="MusicVolumeLabel" type="Label" parent="OptionsUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.0
+offset_top = -24.0
+offset_right = -119.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Music Volume:"
+
+[node name="SoundEffectsVolumeSlider" type="HSlider" parent="OptionsUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 20.0
+offset_right = 100.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="SoundEffectsVolumeLabel" type="Label" parent="OptionsUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.0
+offset_top = 16.0
+offset_right = -137.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SFX Volume:"
+
+[node name="CloseOptions" type="Button" parent="OptionsUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = 62.5
+offset_right = 25.0
+offset_bottom = 93.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Close"
+
+[node name="CreditsUI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Title" type="Label" parent="CreditsUI"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -52.5
+offset_right = 52.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Game Credits"
+horizontal_alignment = 1
+
+[node name="DeveloperCredits" type="Label" parent="CreditsUI"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -66.5
+offset_top = 100.0
+offset_right = 66.5
+offset_bottom = 149.0
+grow_horizontal = 2
+text = "Developer:
+Lion_El_Johnsonn"
+horizontal_alignment = 1
+
+[node name="MusicCredits" type="Label" parent="CreditsUI"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -93.0
+offset_top = 200.0
+offset_right = 93.0
+offset_bottom = 249.0
+grow_horizontal = 2
+text = "Free Music Assets Made By:
+melodyayresgriffiths"
+horizontal_alignment = 1
+
+[node name="SoundEffectCredits" type="Label" parent="CreditsUI"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -84.0
+offset_top = 300.0
+offset_right = 84.0
+offset_bottom = 349.0
+grow_horizontal = 2
+text = "Free SFX Assets Made By:
+floraphonic"
+horizontal_alignment = 1
+
+[node name="BackButtonUI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="BackButton" type="Button" parent="BackButtonUI"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -124.0
+offset_top = -53.0
+offset_right = -24.0
+offset_bottom = -22.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Back"
+
+[node name="InventoryUI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="InventoryMenuBackground" type="ColorRect" parent="InventoryUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -760.0
+offset_top = -400.0
+offset_right = 760.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.147672, 0.147672, 0.147672, 1)
+
+[node name="VerticalDivider1" type="ColorRect" parent="InventoryUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -400.0
+offset_right = 2.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HorizontalDivider1" type="ColorRect" parent="InventoryUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -760.0
+offset_top = -2.0
+offset_right = 760.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerItemContainer" type="Control" parent="InventoryUI"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 83.0
+offset_top = 78.0
+offset_right = 123.0
+offset_bottom = 118.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="InventoryUI/PlayerItemContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -74.0
+offset_right = 68.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="InventoryUI/PlayerItemContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+columns = 3
+
+[node name="ItemDetailsContainer" type="Control" parent="InventoryUI"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 505.0
+offset_top = 110.0
+offset_right = 545.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemName" type="Label" parent="InventoryUI/ItemDetailsContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.5
+offset_top = -115.5
+offset_right = 45.5
+offset_bottom = -92.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Item Name!"
+horizontal_alignment = 1
+
+[node name="ItemDescription" type="Label" parent="InventoryUI/ItemDetailsContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.5
+offset_top = -4.0
+offset_right = 147.5
+offset_bottom = 196.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "The description for the item goes here dfdfff dfdfdfd dfsfdfdfdf  fdfsdfsf sfsfs fsfsf f sf f sfd dfsfsdgfg g fgdgdgasdfewr ftrtgre er sg r twerw rwe re rwere re rse res rr s e rwqerqerwerwes r errqer er e rqe rer qe re re r er e"
+autowrap_mode = 3
+
+[node name="ItemIcon" type="TextureRect" parent="InventoryUI/ItemDetailsContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -149.0
+offset_top = -115.0
+offset_right = -69.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_vmf8l")
+expand_mode = 1
+
+[node name="SellItemButton" type="Button" parent="InventoryUI/ItemDetailsContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.5
+offset_top = -67.5
+offset_right = 30.5
+offset_bottom = -36.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Sell Item"
+
+[node name="ShopUI" type="CanvasLayer" parent="."]
+
+[node name="ShopMenuBackground" type="ColorRect" parent="ShopUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -420.0
+offset_top = -360.0
+offset_right = 420.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.431373)
+
+[node name="ShopHeaderBar" type="ColorRect" parent="ShopUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -420.0
+offset_top = -400.0
+offset_right = 420.0
+offset_bottom = -360.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0728426, 0.0728426, 0.0728426, 1)
+
+[node name="ShopLabel" type="Label" parent="ShopUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -392.5
+offset_right = 20.0
+offset_bottom = -369.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Shop"
+horizontal_alignment = 1
+
+[node name="ShopKeeperSprite" type="TextureRect" parent="ShopUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -408.0
+offset_top = 190.0
+offset_right = -288.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_fp1lx")
+
+[node name="VerticalDivider1" type="ColorRect" parent="ShopUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -360.0
+offset_right = 2.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="HorizontalDivider1" type="ColorRect" parent="ShopUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -420.0
+offset_top = -2.0
+offset_right = 420.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ItemsLabel1" type="Label" parent="ShopUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -244.0
+offset_top = -355.0
+offset_right = -182.0
+offset_bottom = -332.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Items
+"
+horizontal_alignment = 1
+
+[node name="ItemsLabel2" type="Label" parent="ShopUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 188.0
+offset_top = -355.0
+offset_right = 232.0
+offset_bottom = -332.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Items"
+horizontal_alignment = 1
+
+[node name="ItemCardContainer1" type="Control" parent="ShopUI"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -368.0
+offset_top = -250.0
+offset_right = -328.0
+offset_bottom = -210.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemCard" type="TextureRect" parent="ShopUI/ItemCardContainer1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -80.0
+offset_right = 60.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_xkpxo")
+
+[node name="BuyButton" type="Button" parent="ShopUI/ItemCardContainer1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = 85.5
+offset_right = 40.0
+offset_bottom = 116.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Buy"
+
+[node name="CardLabel" type="Label" parent="ShopUI/ItemCardContainer1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.5
+offset_top = -78.5
+offset_right = 22.5
+offset_bottom = -55.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "Item1"
+horizontal_alignment = 1
+
+[node name="ItemCardContainer2" type="Control" parent="ShopUI"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.0
+offset_top = -250.0
+offset_right = -192.0
+offset_bottom = -210.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemCard" type="TextureRect" parent="ShopUI/ItemCardContainer2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -80.0
+offset_right = 60.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_xkpxo")
+
+[node name="BuyButton" type="Button" parent="ShopUI/ItemCardContainer2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = 85.5
+offset_right = 40.0
+offset_bottom = 116.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Buy"
+
+[node name="CardLabel" type="Label" parent="ShopUI/ItemCardContainer2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.5
+offset_top = -78.5
+offset_right = 22.5
+offset_bottom = -55.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "Item2"
+horizontal_alignment = 1
+
+[node name="ItemCardContainer3" type="Control" parent="ShopUI"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -250.0
+offset_right = -56.0
+offset_bottom = -210.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemCard" type="TextureRect" parent="ShopUI/ItemCardContainer3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -80.0
+offset_right = 60.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_xkpxo")
+
+[node name="BuyButton" type="Button" parent="ShopUI/ItemCardContainer3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = 85.5
+offset_right = 40.0
+offset_bottom = 116.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Buy"
+
+[node name="CardLabel" type="Label" parent="ShopUI/ItemCardContainer3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -78.5
+offset_right = 20.0
+offset_bottom = -55.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "Item3"
+horizontal_alignment = 1
+
+[node name="ItemCardContainer4" type="Control" parent="ShopUI"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 56.0
+offset_top = -250.0
+offset_right = 96.0
+offset_bottom = -210.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UnitCard" type="TextureRect" parent="ShopUI/ItemCardContainer4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -80.0
+offset_right = 60.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_xkpxo")
+
+[node name="BuyButton" type="Button" parent="ShopUI/ItemCardContainer4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = 85.5
+offset_right = 40.0
+offset_bottom = 116.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Buy"
+
+[node name="CardLabel" type="Label" parent="ShopUI/ItemCardContainer4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.5
+offset_top = -78.5
+offset_right = 31.5
+offset_bottom = -55.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "Item4"
+horizontal_alignment = 1
+
+[node name="ItemCardContainer5" type="Control" parent="ShopUI"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 192.0
+offset_top = -250.0
+offset_right = 232.0
+offset_bottom = -210.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UnitCard" type="TextureRect" parent="ShopUI/ItemCardContainer5"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -80.0
+offset_right = 60.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_xkpxo")
+
+[node name="BuyButton" type="Button" parent="ShopUI/ItemCardContainer5"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = 85.5
+offset_right = 40.0
+offset_bottom = 116.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Buy"
+
+[node name="CardLabel" type="Label" parent="ShopUI/ItemCardContainer5"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.5
+offset_top = -78.5
+offset_right = 31.5
+offset_bottom = -55.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "Item5"
+horizontal_alignment = 1
+
+[node name="ItemCardContainer6" type="Control" parent="ShopUI"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 328.0
+offset_top = -250.0
+offset_right = 368.0
+offset_bottom = -210.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UnitCard" type="TextureRect" parent="ShopUI/ItemCardContainer6"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -80.0
+offset_right = 60.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_xkpxo")
+
+[node name="BuyButton" type="Button" parent="ShopUI/ItemCardContainer6"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = 85.5
+offset_right = 40.0
+offset_bottom = 116.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Buy"
+
+[node name="CardLabel" type="Label" parent="ShopUI/ItemCardContainer6"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.5
+offset_top = -78.5
+offset_right = 31.5
+offset_bottom = -55.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "Item6"
+horizontal_alignment = 1
+
+[node name="SpecialSaleLabel" type="Label" parent="ShopUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 160.0
+offset_top = 17.0
+offset_right = 264.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Special Sale!!!"
+horizontal_alignment = 1
+
+[node name="SpecialSaleContainer" type="Control" parent="ShopUI"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 192.0
+offset_top = 118.0
+offset_right = 232.0
+offset_bottom = 158.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SpecialSale" type="TextureRect" parent="ShopUI/SpecialSaleContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -80.0
+offset_right = 60.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_xkpxo")
+
+[node name="BuyButton" type="Button" parent="ShopUI/SpecialSaleContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = 85.5
+offset_right = 40.0
+offset_bottom = 116.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Buy"
+
+[node name="CardLabel" type="Label" parent="ShopUI/SpecialSaleContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.5
+offset_top = -78.5
+offset_right = 35.5
+offset_bottom = -55.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "Special Sale!"
+horizontal_alignment = 1
+
+[node name="ShopKeeperContainer" type="Control" parent="ShopUI"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -184.0
+offset_top = 230.0
+offset_right = -144.0
+offset_bottom = 270.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="ShopUI/ShopKeeperContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.498039, 0.517647, 0.592157, 0.686275)
+
+[node name="TalkLabel" type="Label" parent="ShopUI/ShopKeeperContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = -51.0
+offset_right = 41.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Ask About:"
+
+[node name="LoreButton" type="Button" parent="ShopUI/ShopKeeperContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -15.5
+offset_right = 32.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Lore:"
+
+[node name="AdviceButton" type="Button" parent="ShopUI/ShopKeeperContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.5
+offset_top = 16.5
+offset_right = 29.5
+offset_bottom = 47.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Advice:"
+
+[node name="ShopKeeperTextBoxContainer" type="Control" parent="ShopUI"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.0
+offset_top = 63.0
+offset_right = -192.0
+offset_bottom = 103.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="ShopUI/ShopKeeperTextBoxContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -80.0
+offset_right = 200.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ShopKeeperTextBox" type="Label" parent="ShopUI/ShopKeeperTextBoxContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -80.0
+offset_right = 180.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Your minions have the ability to shapeshift! A minion can change to another minion of the same Soul type and Tier. For example, a Tier II Nature minion can change to any Tier II Nature minion regardless of Class type."
+autowrap_mode = 2
+
+[node name="PauseMenuUI" type="CanvasLayer" parent="."]
+layer = 2
+visible = false
+
+[node name="PauseMenuBackground" type="ColorRect" parent="PauseMenuUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -100.0
+offset_right = 80.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.587275, 0.543846, 0.602208, 1)
+
+[node name="ResumeGameButton" type="Button" parent="PauseMenuUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -77.0
+offset_right = 64.0
+offset_bottom = -46.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Resume"
+
+[node name="PauseMenuControlsButton" type="Button" parent="PauseMenuUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -46.0
+offset_right = 64.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Controls/Help"
+
+[node name="PauseMenuOptionsButton" type="Button" parent="PauseMenuUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -15.5
+offset_right = 64.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Options"
+
+[node name="AbandonGameButton" type="Button" parent="PauseMenuUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = 16.0
+offset_right = 64.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Abandon Game"
+
+[node name="AbandonGameUI" type="CanvasLayer" parent="PauseMenuUI"]
+layer = 3
+visible = false
+
+[node name="AbandonGameBackground" type="ColorRect" parent="PauseMenuUI/AbandonGameUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -76.0
+offset_right = 180.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0358406, 0.00617705, 0.20921, 0.968627)
+
+[node name="ConfirmExitLabel" type="Label" parent="PauseMenuUI/AbandonGameUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.0
+offset_top = -53.0
+offset_right = 150.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Abandon Run? All progress will be lost!"
+horizontal_alignment = 1
+
+[node name="ConfirmAbandonGameButton" type="Button" parent="PauseMenuUI/AbandonGameUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = -15.0
+offset_right = -17.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Yes"
+
+[node name="CancelAbandonGameButton" type="Button" parent="PauseMenuUI/AbandonGameUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 18.0
+offset_top = -15.0
+offset_right = 49.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "No"
+
+[node name="GameOverUI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="GameWinUI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="MenuBarUI" type="CanvasLayer" parent="."]
+
+[node name="MenuBarBackground" type="ColorRect" parent="MenuBarUI"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 32.0
+grow_horizontal = 2
+mouse_filter = 2
+color = Color(0.498039, 0.517647, 0.592157, 0.686275)
+
+[node name="OpenShopButton" type="Button" parent="MenuBarUI"]
+offset_right = 66.0
+offset_bottom = 31.0
+text = "Shop(E)"
+
+[node name="OpenInventoryButton" type="Button" parent="MenuBarUI"]
+offset_left = 77.0
+offset_right = 199.0
+offset_bottom = 31.0
+text = "Inventory(Tab)"
+
+[node name="PauseGameButton" type="Button" parent="MenuBarUI"]
+offset_left = 209.0
+offset_right = 299.0
+offset_bottom = 31.0
+text = "Pause(Esc)"
+
+[node name="PlayerRunesLabel" type="Label" parent="MenuBarUI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -405.0
+offset_top = 8.0
+offset_right = -353.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "Runes:"
+
+[node name="PlayerManaCoresLabel" type="Label" parent="MenuBarUI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -136.0
+offset_top = 8.0
+offset_right = -40.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "Mana Cores:"
+
+[node name="PlayerMorphSlimeLabel" type="Label" parent="MenuBarUI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -296.0
+offset_top = 8.0
+offset_right = -193.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "Morph Slime:"
+
+[node name="PlayerRunesCount" type="Label" parent="MenuBarUI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -352.0
+offset_top = 8.0
+offset_right = -306.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "99999"
+
+[node name="PlayerManaCoresCount" type="Label" parent="MenuBarUI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_top = 8.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "5/5"
+
+[node name="PlayerMorphSlimeCount" type="Label" parent="MenuBarUI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -192.0
+offset_top = 8.0
+offset_right = -146.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "99999"
+
+[connection signal="pressed" from="MainMenuUI/StartButton" to="." method="OnStartButtonPressed"]
+[connection signal="pressed" from="MainMenuUI/ControlsButton" to="." method="OnControlsButtonPressed"]
+[connection signal="pressed" from="MainMenuUI/OptionsButton" to="." method="OnOptionsButtonPressed"]
+[connection signal="pressed" from="MainMenuUI/CreditsButton" to="." method="OnCreditsButtonPressed"]
+[connection signal="pressed" from="MainMenuUI/ExitButton" to="." method="OnExitButtonPressed"]
+[connection signal="pressed" from="StartUI/RedClanContainer/SelectClanButton" to="." method="OnSelectClanButtonPressed" binds= ["Red"]]
+[connection signal="pressed" from="StartUI/BlueClanContainer/SelectClanButton" to="." method="OnSelectClanButtonPressed" binds= ["Blue"]]
+[connection signal="pressed" from="StartUI/PurpleClanContainer/SelectClanButton" to="." method="OnSelectClanButtonPressed" binds= ["Purple"]]
+[connection signal="pressed" from="StartUI/YellowClanContainer/SelectClanButton" to="." method="OnSelectClanButtonPressed" binds= ["Yellow"]]
+[connection signal="pressed" from="StartUI/GreenClanContainer/SelectClanButton" to="." method="OnSelectClanButtonPressed" binds= ["Green"]]
+[connection signal="pressed" from="ControlsUI/CloseControls" to="." method="OnCloseControlsButtonPressed"]
+[connection signal="value_changed" from="OptionsUI/MasterVolumeSlider" to="." method="OnMasterVolumeSliderValueChanged"]
+[connection signal="value_changed" from="OptionsUI/MusicVolumeSlider" to="." method="OnMusicVolumeSliderValueChanged"]
+[connection signal="value_changed" from="OptionsUI/SoundEffectsVolumeSlider" to="." method="OnSoundEffectsVolumeSliderValueChanged"]
+[connection signal="pressed" from="OptionsUI/CloseOptions" to="." method="OnCloseOptionsPressed"]
+[connection signal="pressed" from="BackButtonUI/BackButton" to="." method="OnBackButtonPressed"]
+[connection signal="pressed" from="InventoryUI/ItemDetailsContainer/SellItemButton" to="." method="OnSellItemButtonPressed"]
+[connection signal="pressed" from="ShopUI/ItemCardContainer1/BuyButton" to="." method="OnBuyButtonPressed" binds= [0, "Item"]]
+[connection signal="pressed" from="ShopUI/ItemCardContainer2/BuyButton" to="." method="OnBuyButtonPressed" binds= [1, "Item"]]
+[connection signal="pressed" from="ShopUI/ItemCardContainer3/BuyButton" to="." method="OnBuyButtonPressed" binds= [2, "Item"]]
+[connection signal="pressed" from="ShopUI/ItemCardContainer4/BuyButton" to="." method="OnBuyButtonPressed" binds= [3, "Item"]]
+[connection signal="pressed" from="ShopUI/ItemCardContainer5/BuyButton" to="." method="OnBuyButtonPressed" binds= [4, "Item"]]
+[connection signal="pressed" from="ShopUI/ItemCardContainer6/BuyButton" to="." method="OnBuyButtonPressed" binds= [5, "Item"]]
+[connection signal="pressed" from="ShopUI/SpecialSaleContainer/BuyButton" to="." method="OnBuyButtonPressed" binds= [0, "Special Sale"]]
+[connection signal="pressed" from="ShopUI/ShopKeeperContainer/LoreButton" to="." method="OnLoreButtonPressed"]
+[connection signal="pressed" from="ShopUI/ShopKeeperContainer/AdviceButton" to="." method="OnAdviceButtonPressed"]
+[connection signal="pressed" from="PauseMenuUI/ResumeGameButton" to="." method="OnResumeGameButtonPressed"]
+[connection signal="pressed" from="PauseMenuUI/PauseMenuControlsButton" to="." method="OnPauseMenuControlsButtonPressed"]
+[connection signal="pressed" from="PauseMenuUI/PauseMenuOptionsButton" to="." method="OnPauseMenuOptionsButtonPressed"]
+[connection signal="pressed" from="PauseMenuUI/AbandonGameButton" to="." method="OnAbandonGameButtonPressed"]
+[connection signal="pressed" from="PauseMenuUI/AbandonGameUI/ConfirmAbandonGameButton" to="." method="OnConfirmAbandonGameButtonPressed"]
+[connection signal="pressed" from="PauseMenuUI/AbandonGameUI/CancelAbandonGameButton" to="." method="OnCancelAbandonGameButtonPressed"]
+[connection signal="pressed" from="MenuBarUI/OpenShopButton" to="." method="OnOpenShopButtonPressed"]
+[connection signal="pressed" from="MenuBarUI/OpenInventoryButton" to="." method="OnOpenInventoryButtonPressed"]
+[connection signal="pressed" from="MenuBarUI/PauseGameButton" to="." method="OnPauseGameButtonPressed"]
