@@ -1,14 +1,14 @@
 using Godot;
 using System;
 
-public partial class ItemButton : Button
+public partial class InventoryButton : Button
 {
 	// Properties
 	public TextureRect ButtonIcon;
 	public Label ButtonLabel;
 	public int Index;
 	public string Content;
-	public bool IsHoldingItem;
+	public bool IsHolding;
 
 	// Access to custom signals
 	private CustomSignals _customSignals;
@@ -31,28 +31,28 @@ public partial class ItemButton : Button
 	{
 	}
 
-	public void UpdateItemButton(int index, string content, Texture2D texture, string count, bool isHoldingItem)
+	public void UpdateInventoryButton(int index, string content, Texture2D texture, string count, bool isHolding)
 	{
 		Index = index;
 		Content = content;
 		ButtonIcon.Texture = texture;
 		ButtonLabel.Text = count;
-		IsHoldingItem = isHoldingItem;
+		IsHolding = isHolding;
 		
 	}
 	
-	public void UpdateItemButtonCount(string count)
+	public void UpdateInventoryButtonCount(string count)
 	{
 		ButtonLabel.Text = count;
 	}
 
-	public void ResetItemButton(int index)
+	public void ResetInventoryButton(int index)
 	{
 		Index = index;
 		Content = "";
 		ButtonIcon.Texture = null;
 		ButtonLabel.Text = "";
-		IsHoldingItem = false;
+		IsHolding = false;
 	}
 
 	private void OnPressed()

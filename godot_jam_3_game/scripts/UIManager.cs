@@ -53,8 +53,8 @@ public partial class UIManager : Control
 	private CustomSignals _customSignals;
 
 	// Packed Scenes
-	public PackedScene ItemButtonInstance;
-	[Export] public string ItemButtonPath = "res://item_button.tscn";
+	public PackedScene InventoryButtonInstance;
+	[Export] public string InventoryButtonPath = "res://inventory_button.tscn";
 
 	// Methods
 
@@ -71,7 +71,7 @@ public partial class UIManager : Control
 		_customSignals.InspectInventoryItem += HandleInspectInventoryItem;
 
 		// Item Buttons
-		ItemButtonInstance = ResourceLoader.Load<PackedScene>(ItemButtonPath);
+		InventoryButtonInstance = ResourceLoader.Load<PackedScene>(InventoryButtonPath);
 
 		ItemGridContainer = GetNode<GridContainer>("InventoryUI/PlayerItemContainer/ScrollContainer/GridContainer");
 
@@ -532,11 +532,11 @@ public partial class UIManager : Control
 	// Method for initializing inventory item buttons
 	private void InitializeInventoryItemButtons()
 	{
-		ItemButton currentItemButton;
+		InventoryButton currentItemButton;
 
 		for (int i = 0; i < _gameData.ItemCapacity; i++)
 		{
-			currentItemButton = ItemButtonInstance.Instantiate<ItemButton>();
+			currentItemButton = InventoryButtonInstance.Instantiate<InventoryButton>();
 			//GetNode<GridContainer>("InventoryUI/PlayerItemContainer/ScrollContainer/GridContainer").AddChild(currentItemButton);
 			ItemGridContainer.AddChild(currentItemButton);
 
@@ -549,7 +549,7 @@ public partial class UIManager : Control
 		// Reset all inventory buttons
 		for(int i = 0; i < _gameData.ItemCapacity; i++)
 		{
-			ResetInventoryItemButton(i);
+			ResetInventoryButton(i);
 		}
 	}
 
@@ -566,28 +566,28 @@ public partial class UIManager : Control
 			texture = _gameData.PlayerItemList[i].Icon;
 			count = _gameData.PlayerItemList[i].Quantity.ToString();
 
-			UpdateInventoryItemButton(i, content, texture, count);
+			UpdateInventoryButton(i, content, texture, count);
 		}
 		
 		
 	}
 
-	// Method for updating an inventory item button
-	private void UpdateInventoryItemButton(int index, string content, Texture2D texture, string count)
+	// Method for updating an inventory button
+	private void UpdateInventoryButton(int index, string content, Texture2D texture, string count)
 	{
-		ItemGridContainer.GetChild<ItemButton>(index).UpdateItemButton(index, content, texture, count, true);
+		ItemGridContainer.GetChild<InventoryButton>(index).UpdateInventoryButton(index, content, texture, count, true);
 	}
 
-	// Method for updating an item button's count
-	private void UpdateInventoryItemButtonLabel(int index, string count)
+	// Method for updating an inventory button's count
+	private void UpdateInventoryButtonLabel(int index, string count)
 	{
-		ItemGridContainer.GetChild<ItemButton>(index).UpdateItemButtonCount(count);
+		ItemGridContainer.GetChild<InventoryButton>(index).UpdateInventoryButtonCount(count);
 	}
 
-	// Method for reseting an item button
-	private void ResetInventoryItemButton(int index)
+	// Method for reseting an inventory button
+	private void ResetInventoryButton(int index)
 	{
-		ItemGridContainer.GetChild<ItemButton>(index).ResetItemButton(index);
+		ItemGridContainer.GetChild<InventoryButton>(index).ResetInventoryButton(index);
 	}
 
 	// Handle Inspect Inventory Item
@@ -741,7 +741,7 @@ public partial class UIManager : Control
 		_gameData.PlayerItemList[CurrentItemButtonIndex].Quantity--;
 
 		// Update the item button
-		UpdateInventoryItemButtonLabel(CurrentItemButtonIndex, _gameData.PlayerItemList[CurrentItemButtonIndex].Quantity.ToString());
+		UpdateInventoryButtonLabel(CurrentItemButtonIndex, _gameData.PlayerItemList[CurrentItemButtonIndex].Quantity.ToString());
 
 	}
 
@@ -761,7 +761,7 @@ public partial class UIManager : Control
 			CurrentItemButtonIndex = 0;
 
 			// Reset item button
-			ResetInventoryItemButton(CurrentItemButtonIndex);
+			ResetInventoryButton(CurrentItemButtonIndex);
 
 			// Reset item details
 			ResetInventoryItemDetails();
@@ -782,7 +782,7 @@ public partial class UIManager : Control
 			ReflowInventoryItems();
 
 			// Reset the button whose index is CurretnItemCount
-			ResetInventoryItemButton(_gameData.CurrentItemCount);
+			ResetInventoryButton(_gameData.CurrentItemCount);
 		}
 	}
 
@@ -903,7 +903,7 @@ public partial class UIManager : Control
 				itemFound = true;
 				message = "Item Found!: " + purchaseName;
 				_gameData.PlayerItemList[i].Quantity++;
-				UpdateInventoryItemButtonLabel(i, _gameData.PlayerItemList[i].Quantity.ToString());
+				UpdateInventoryButtonLabel(i, _gameData.PlayerItemList[i].Quantity.ToString());
 				//pdateInventoryItemButton(i, purchaseName, )
 
 				GD.Print(message);
@@ -941,7 +941,7 @@ public partial class UIManager : Control
 
 			count = _gameData.PlayerItemList[index].Quantity.ToString();
 
-			UpdateInventoryItemButton(index, purchaseName, texture, count);
+			UpdateInventoryButton(index, purchaseName, texture, count);
 
 			GD.Print(message);
 			GD.Print("Item List Count: ",_gameData.PlayerItemList.Count);
