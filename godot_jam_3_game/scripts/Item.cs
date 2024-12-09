@@ -9,7 +9,7 @@ public partial class Item : Resource
 	[Export] 
 	public string ItemName { get; set; }
 	[Export] 
-	public int RuneCost { get; set; }
+	public int CreditCost { get; set; }
 	//[Export] public string ResourcePath { get; set; }
 
 	[Export] public Texture2D Icon { get; set; }
@@ -28,11 +28,11 @@ public partial class Item : Resource
 		
 	}
 
-	public Item(int id, string itemName, int runeCost, Texture2D icon, int quantity, int maxStackSize, bool isStackable, string description)
+	public Item(int id, string itemName, int creditCost, Texture2D icon, int quantity, int maxStackSize, bool isStackable, string description)
 	{
 		ID = id;
 		ItemName = itemName;
-		RuneCost = runeCost;
+		CreditCost = creditCost;
 		Icon = icon;
 		Quantity = quantity;
 		MaxStackSize = maxStackSize;

@@ -378,7 +378,7 @@ public partial class UIManager : Control
 	private void ResetPlayerResourcesText()
 	{
 		// Reset Runes
-		UpdatePlayerRunesText(10);
+		UpdatePlayerCreditsText(10);
 
 		// Reset Mana Cores
 		UpdatePlayerManaCoresText(0);
@@ -388,10 +388,10 @@ public partial class UIManager : Control
 	}
 
 	// Method to update Player Runes
-	private void UpdatePlayerRunesText(int runes)
+	private void UpdatePlayerCreditsText(int credits)
 	{
-		_gameData.CurrentPlayerRunes = runes;
-		GetNode<Label>("MenuBarUI/PlayerRunesCount").Text = runes.ToString();
+		_gameData.CurrentPlayerCredits = credits;
+		GetNode<Label>("MenuBarUI/PlayerCreditsCount").Text = credits.ToString();
 
 
 	}
@@ -640,12 +640,13 @@ public partial class UIManager : Control
 
 		itemName = _gameData.PlayerItemList[CurrentItemButtonIndex].ItemName;
 
-		// Case 1 Single Item in Inventory
+		// Case 1 Single Type of Item in Inventory
 		if (_gameData.CurrentItemCount == 1)
 		{
 			// Check if item quantity is 1
 			if(_gameData.PlayerItemList[CurrentItemButtonIndex].Quantity == 1)
 			{
+				/*
 				// Remove the item
 				_gameData.PlayerItemList.Remove(_gameData.PlayerItemList[CurrentItemButtonIndex]);
 
@@ -660,6 +661,8 @@ public partial class UIManager : Control
 
 				// Reset item details
 				ResetInventoryItemDetails();
+				*/
+				RemoveInventoryItem(true);
 
 				// Print details
 				message = "Item Sold: " + itemName;
@@ -682,12 +685,13 @@ public partial class UIManager : Control
 
 			}
 		}
-		// Case 2: Multiple items in inventory
+		// Case 2: Multiple Types of items in inventory
 		else
 		{
 			// Check if the item quantity is 1
 			if(_gameData.PlayerItemList[CurrentItemButtonIndex].Quantity == 1)
 			{
+				/*
 				// Remove the item
 				_gameData.PlayerItemList.Remove(_gameData.PlayerItemList[CurrentItemButtonIndex]);
 
@@ -702,6 +706,9 @@ public partial class UIManager : Control
 
 				// Reset the button whose index is CurretnItemCount
 				ResetInventoryItemButton(_gameData.CurrentItemCount);
+				*/
+
+				RemoveInventoryItem(false);
 
 				// Print the details
 				message = "Item Sold: " + itemName;
@@ -736,6 +743,47 @@ public partial class UIManager : Control
 		// Update the item button
 		UpdateInventoryItemButtonLabel(CurrentItemButtonIndex, _gameData.PlayerItemList[CurrentItemButtonIndex].Quantity.ToString());
 
+	}
+
+	// Method to handle removing an item from the inventory
+	private void RemoveInventoryItem(bool singleItemOnly)
+	{
+		// Case 1 Single Type of Item in Inventory
+		if (singleItemOnly)
+		{
+			// Remove the item
+			_gameData.PlayerItemList.Remove(_gameData.PlayerItemList[CurrentItemButtonIndex]);
+
+			// Decrement item count
+			_gameData.CurrentItemCount--;
+
+			// Set item button index to 0
+			CurrentItemButtonIndex = 0;
+
+			// Reset item button
+			ResetInventoryItemButton(CurrentItemButtonIndex);
+
+			// Reset item details
+			ResetInventoryItemDetails();
+		}
+		// Case 2 Multiple Types of Items in Inventory
+		else
+		{
+			// Remove the item
+			_gameData.PlayerItemList.Remove(_gameData.PlayerItemList[CurrentItemButtonIndex]);
+
+			// Decrement item count
+			_gameData.CurrentItemCount--;
+
+			// Reset item details
+			ResetInventoryItemDetails();
+
+			// Reflow item buttons
+			ReflowInventoryItems();
+
+			// Reset the button whose index is CurretnItemCount
+			ResetInventoryItemButton(_gameData.CurrentItemCount);
+		}
 	}
 
 	//*********************************************************
@@ -798,7 +846,7 @@ public partial class UIManager : Control
 		else if (purchaseRequest == "Item")
 		{
 			purchaseName = _gameData.CurrentShopItemNames[purchaseIndex];
-			purchaseCost = _gameData.MasterItemDictionary[purchaseName].RuneCost;
+			purchaseCost = _gameData.MasterItemDictionary[purchaseName].CreditCost;
 
 			HandlePurchaseItem(purchaseName, purchaseCost);
 
@@ -807,7 +855,7 @@ public partial class UIManager : Control
 		}else if (purchaseRequest == "Special Sale")
 		{
 			purchaseName = _gameData.CurrentShopSpecialSaleName;
-			purchaseCost = _gameData.MasterItemDictionary[purchaseName].RuneCost;
+			purchaseCost = _gameData.MasterItemDictionary[purchaseName].CreditCost;
 
 			HandlePurchaseItem(purchaseName, purchaseCost);
 
@@ -827,7 +875,7 @@ public partial class UIManager : Control
 		bool itemFound = false;
 
 		// Check if player has enough runes
-		if(_gameData.CurrentPlayerRunes < purchaseCost)
+		if(_gameData.CurrentPlayerCredits < purchaseCost)
 		{
 			
 			message = "Error: Not Enough Runes!";

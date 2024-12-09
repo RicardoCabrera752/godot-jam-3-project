@@ -66,7 +66,7 @@ public partial class GameData : Node
 
 	// Player Metadata
 	// Amount of Runes the Player has currently
-	public int CurrentPlayerRunes { get; set; } = 0;
+	public int CurrentPlayerCredits { get; set; } = 0;
 	// Amount of Mana Cores the Player has currently
 	public int CurrentManaCores { get; set; } = 0;
 	// Amount of Morph Slime the Player has currently
@@ -129,7 +129,7 @@ public partial class GameData : Node
 		IsGameMapWorldDead = false;
 
 		// Player Metadata
-		CurrentPlayerRunes = 0;
+		CurrentPlayerCredits = 0;
 		CurrentManaCores = 0;
 		CurrentMorphSlime = 0;
 		CurrentItemCount = 0;

@@ -2529,7 +2529,7 @@ offset_right = 299.0
 offset_bottom = 31.0
 text = "Pause(Esc)"
 
-[node name="PlayerRunesLabel" type="Label" parent="MenuBarUI"]
+[node name="PlayerCreditsLabel" type="Label" parent="MenuBarUI"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -2538,7 +2538,7 @@ offset_top = 8.0
 offset_right = -353.0
 offset_bottom = 31.0
 grow_horizontal = 0
-text = "Runes:"
+text = "Credits:"
 
 [node name="PlayerManaCoresLabel" type="Label" parent="MenuBarUI"]
 anchors_preset = 1
@@ -2562,7 +2562,7 @@ offset_bottom = 31.0
 grow_horizontal = 0
 text = "Morph Slime:"
 
-[node name="PlayerRunesCount" type="Label" parent="MenuBarUI"]
+[node name="PlayerCreditsCount" type="Label" parent="MenuBarUI"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
